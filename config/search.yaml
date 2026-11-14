@@ -1,0 +1,32 @@
+# Search rules. The agent reads these; the LLM never changes them.
+
+# "From 10 March" with no end date searches this many days, starting that day.
+default_window_days: 7
+
+# A metro code can expand to many airports (LON = 6). Only the first N per side
+# are searched, to protect the API quota. List airports explicitly to choose.
+max_airports_per_side: 3
+
+# optimize=value ranks by: total cost + door-to-door hours x this amount.
+# 10 means "I would pay 10 EUR to travel one hour less".
+value_of_time_eur_per_hour: 10
+
+# How many options to show.
+top_n: 5
+
+# Metropolitan area codes (IATA) -> airports, in order of preference.
+metro_areas:
+  STO: [ARN, BMA, NYO]                  # Stockholm
+  LON: [LHR, LGW, STN, LTN, LCY, SEN]   # London
+  PAR: [CDG, ORY, BVA]                  # Paris
+  MIL: [MXP, LIN, BGY]                  # Milan
+  ROM: [FCO, CIA]                       # Rome
+  NYC: [JFK, EWR, LGA]                  # New York
+
+# Optional: cost and time to reach or leave an airport, added to the flight
+# price to compare airports fairly (a cheap flight from a far airport may not
+# be cheap at all). Airports not listed count as 0.
+airport_access:
+  NYO: {cost_eur: 25, minutes: 80, note: "example: Skavsta bus from Stockholm City, check the real price"}
+  ARN: {cost_eur: 35, minutes: 20, note: "Arlanda Express"}
+  TSF: {cost_eur: 12, minutes: 40, note: "bus to Treviso / Venezia Mestre"}

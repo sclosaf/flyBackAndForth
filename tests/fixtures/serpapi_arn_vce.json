@@ -1,0 +1,36 @@
+{
+  "best_flights": [
+    {
+      "flights": [
+        {"departure_airport": {"id": "ARN", "time": "2026-12-19 07:10"},
+         "arrival_airport": {"id": "CPH", "time": "2026-12-19 08:25"},
+         "airline": "SAS", "flight_number": "SK 1416"},
+        {"departure_airport": {"id": "CPH", "time": "2026-12-19 10:05"},
+         "arrival_airport": {"id": "VCE", "time": "2026-12-19 12:15"},
+         "airline": "SAS", "flight_number": "SK 2687"}
+      ],
+      "total_duration": 305, "price": 132
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {"departure_airport": {"id": "ARN", "time": "2026-12-19 18:40"},
+         "arrival_airport": {"id": "VCE", "time": "2026-12-19 21:30"},
+         "airline": "  Norwegian\n Air  Shuttle ",
+         "flight_number": "DY 1872"}
+      ],
+      "total_duration": 170, "price": 98
+    },
+    {
+      "flights": [
+        {"departure_airport": {"id": "ARN", "time": "2026-12-19 12:00"},
+         "arrival_airport": {"id": "VCE", "time": "2026-12-19 11:00"},
+         "airline": "Broken Air", "flight_number": "XX 1"}
+      ],
+      "total_duration": 120, "price": 50
+    },
+    {"flights": [], "total_duration": 100, "price": 10}
+  ]
+}
+
